@@ -80,7 +80,7 @@ export default function Contact() {
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-heading">
             <span>NEW MESSAGE</span>
-            <span>✳</span>
+            <span></span>
           </div>
 
           <label>
@@ -88,7 +88,7 @@ export default function Contact() {
             <input
               type="text"
               name="from_name"
-              placeholder="What should I call you?"
+              placeholder="Name"
               required
             />
           </label>

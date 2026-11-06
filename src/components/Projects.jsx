@@ -4,7 +4,7 @@ const projects = [
     title: 'Redux E-Commerce Cart',
     type: 'E-COMMERCE WEB APPLICATION',
     description:
-      'Built an e-commerce application using React and Redux Toolkit with product browsing, cart management, quantity updates, and a responsive user interface.',
+      'Developed a responsive e-commerce application featuring product listings, shopping cart management, and wishlist functionality. Implemented cart and wishlist state management using Redux Toolkit to maintain application data across components. Integrated REST APIs to fetch product data and display products dynamically in the user interface.',
     tags: ['React', 'Redux Toolkit', 'JavaScript', 'Bootstrap'],
     style: 'project-art-one',
     link: 'https://ecart-regex.vercel.app/',
@@ -14,7 +14,7 @@ const projects = [
     title: 'BookShelf Web Application',
     type: 'FULL STACK WEB APPLICATION',
     description:
-      'Developed a bookstore application with book management, user authentication, and admin features using React, Node.js, Express.js, and MongoDB.',
+      'Architected a full-stack online bookstore using React.js, Node.js, Express.js, and MongoDB with user-friendly and responsive interfaces. Implemented JWT authentication, role-based access control, book management, and CRUD operations for users and administrators. Integrated Stripe for secure online payments and Google Gemini AI to automatically generate book abstracts based on the entered title to enhance book purchasing and user experience',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB'],
     style: 'project-art-two',
     link: 'https://book-store-frontend-tau-plum.vercel.app/',
@@ -24,7 +24,7 @@ const projects = [
     title: 'Resume Builder',
     type: 'REACT WEB APPLICATION',
     description:
-      'Created a React-based resume builder that allows users to create and customize resumes with PDF export functionality.',
+      'Architected a React-based resume builder with form-based data entry and resume preview functionality .Integrated backend APIs using Axios to save and retrieve resume data. Implemented PDF export functionality using html2canvas and jsPDF to enable resume downloads',
     tags: ['React', 'Axios', 'Canvas', 'jsPDF'],
     style: 'project-art-one',
     link: 'https://resume-builder-react-fe.vercel.app/',
@@ -68,7 +68,6 @@ export default function Projects() {
             </article>
           ))}
         </div>
-        <p className="projects-note reveal"><span>✳</span> Replace these sample cards with your real projects and links.</p>
       </div>
     </section>
   );

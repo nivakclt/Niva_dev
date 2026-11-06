@@ -18,93 +18,59 @@ export default function About() {
   return (
     <section className="section about-section" id="about">
       <div className="container">
-
-        {/* Section Heading */}
         <div className="section-heading reveal about-heading">
-
           <div className="about-heading-content">
-            <p className="eyebrow">
-              02 — A LITTLE ABOUT ME
-            </p>
-
+            <p className="eyebrow">02 — A LITTLE ABOUT ME</p>
             <h2>
               Curious by nature.<br />
-              <span className="muted-heading">
-                Developer by craft.
-              </span>
+              <span className="muted-heading">Developer by craft.</span>
             </h2>
           </div>
-
-          {/* Globe Image */}
-          <div className="about-globe">
-            <img
-              src="/images/about-globe.png"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-
         </div>
 
-        {/* About Content */}
         <div className="about-grid">
-
           <div className="about-copy reveal">
-
             <p className="lead-copy">
               I care about the details people feel, even when they
               don't see them.
             </p>
-
             <p>
               I build web experiences that balance clear design with
               practical engineering. I like breaking down complex ideas,
               learning new tools, and making interfaces feel simple
               and considered.
             </p>
-
             <p>
               I'm always looking for the next interesting problem to solve
               and the next way to get a little better at my craft.
             </p>
-
             <a className="text-link" href="#contact">
               More about working together
               <span aria-hidden="true">↗</span>
             </a>
-
           </div>
 
-          {/* Toolkit Card */}
           <div className="about-card reveal reveal-delay-1">
-
             <div className="card-topline">
               <span>TOOLKIT</span>
               <span>01—05</span>
             </div>
-
             <h3>Things I work with</h3>
-
             <p className="toolkit-note">
               A growing set of tools for building on the web.
             </p>
-
             <div className="tool-list">
               {tools.map((tool, index) => (
                 <div className="tool-row" key={tool}>
                   <span className="tool-number">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-
                   <span>{tool}</span>
-
                   <span className="tool-arrow">↗</span>
                 </div>
               ))}
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

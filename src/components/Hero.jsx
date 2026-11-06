@@ -3,7 +3,6 @@ export default function Hero() {
     <section className="hero section" id="home">
       <div className="hero-grid container">
         <div className="hero-copy reveal">
-          <p className="eyebrow"><span className="status-dot" /> DEVELOPER PORTFOLIO</p>
           <h1>Building digital<br />things with <span className="accent-text">purpose.</span></h1>
           <p className="hero-description">
             Hey, I&apos;m <strong>Niva</strong> — a developer who enjoys turning thoughtful ideas into
