@@ -7,7 +7,7 @@ const projects = [
       'Built an e-commerce application using React and Redux Toolkit with product browsing, cart management, quantity updates, and a responsive user interface.',
     tags: ['React', 'Redux Toolkit', 'JavaScript', 'Bootstrap'],
     style: 'project-art-one',
-    link: 'https://github.com/nivakclt/Ecart_Regex',
+    link: 'https://ecart-regex.vercel.app/',
   },
   {
     number: '02',
@@ -17,7 +17,7 @@ const projects = [
       'Developed a bookstore application with book management, user authentication, and admin features using React, Node.js, Express.js, and MongoDB.',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB'],
     style: 'project-art-two',
-    link: 'https://github.com/nivakclt',
+    link: 'https://book-store-frontend-tau-plum.vercel.app/',
   },
   {
     number: '03',
@@ -27,7 +27,7 @@ const projects = [
       'Created a React-based resume builder that allows users to create and customize resumes with PDF export functionality.',
     tags: ['React', 'Axios', 'Canvas', 'jsPDF'],
     style: 'project-art-one',
-    link: 'https://github.com/nivakclt',
+    link: 'https://resume-builder-react-fe.vercel.app/',
   },
 ];
 
