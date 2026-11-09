@@ -6,11 +6,6 @@ export default function Footer() {
           © {new Date().getFullYear()} Niva K. Built with React & Vite.
         </span>
 
-        <span className="footer-status-tag">
-          <span className="status-dot" />
-          <span>ALL SYSTEMS OPERATIONAL</span>
-        </span>
-
         <a className="back-top" href="#home" aria-label="Back to top">
           Back to top ↑
         </a>
