@@ -40,7 +40,7 @@ export default function Contact() {
     <section className="section contact-section" id="contact">
       <div className="container contact-layout reveal">
         <div className="contact-intro">
-          <p className="eyebrow">04 — YOUR NEXT IDEA STARTS HERE</p>
+          <p className="eyebrow">04 // GET IN TOUCH</p>
 
           <h2>
             Let&apos;s make
@@ -53,9 +53,9 @@ export default function Contact() {
             note and I&apos;ll reply soon.
           </p>
 
-          <div className="availability">
+          <div className="availability-badge">
             <span className="status-dot" />
-            Currently open to opportunities
+            <span>AVAILABLE FOR OPPORTUNITIES</span>
           </div>
 
           <div className="social-links">
@@ -63,6 +63,7 @@ export default function Contact() {
               href="https://github.com/nivakclt"
               target="_blank"
               rel="noreferrer"
+              aria-label="GitHub Profile"
             >
               GitHub <ArrowIcon />
             </a>
@@ -71,6 +72,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/nivakclt"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn Profile"
             >
               LinkedIn <ArrowIcon />
             </a>
@@ -80,7 +82,7 @@ export default function Contact() {
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-heading">
             <span>NEW MESSAGE</span>
-            <span></span>
+            <span className="form-heading-tag">DIRECT INQUIRY</span>
           </div>
 
           <label>

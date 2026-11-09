@@ -1,17 +1,28 @@
-
-const tools = [
-  'React',
-  'JavaScript',
-  'HTML5',
-  'CSS3',
-  'Bootstrap',
-  'Tailwind CSS',
-  'Redux Toolkit',
-  'Git & GitHub',
-  'Node.js',
-  'Express.js',
-  'MongoDB',
-  'Next.js',
+const skillCategories = [
+  {
+    category: 'Frontend',
+    code: '01',
+    skills: [
+      'React',
+      'Next.js',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Redux Toolkit',
+    ],
+  },
+  {
+    category: 'Backend & Database',
+    code: '02',
+    skills: ['Node.js', 'Express.js', 'MongoDB'],
+  },
+  {
+    category: 'Development Tools',
+    code: '03',
+    skills: ['Git & GitHub'],
+  },
 ];
 
 export default function About() {
@@ -20,7 +31,7 @@ export default function About() {
       <div className="container">
         <div className="section-heading reveal about-heading">
           <div className="about-heading-content">
-            <p className="eyebrow">02 — A LITTLE ABOUT ME</p>
+            <p className="eyebrow">02 // ABOUT ME</p>
             <h2>
               Curious by nature.<br />
               <span className="muted-heading">Developer by craft.</span>
@@ -32,7 +43,7 @@ export default function About() {
           <div className="about-copy reveal">
             <p className="lead-copy">
               I care about the details people feel, even when they
-              don't see them.
+              don&apos;t see them.
             </p>
             <p>
               I build web experiences that balance clear design with
@@ -41,32 +52,39 @@ export default function About() {
               and considered.
             </p>
             <p>
-              I'm always looking for the next interesting problem to solve
+              I&apos;m always looking for the next interesting problem to solve
               and the next way to get a little better at my craft.
             </p>
             <a className="text-link" href="#contact">
               More about working together
-              <span aria-hidden="true">↗</span>
+              <span className="link-arrow" aria-hidden="true">↗</span>
             </a>
           </div>
 
           <div className="about-card reveal reveal-delay-1">
             <div className="card-topline">
-              <span>TOOLKIT</span>
-              <span>01—05</span>
+              <span>TECHNICAL TOOLKIT</span>
+              <span>12 TECHNOLOGIES</span>
             </div>
-            <h3>Things I work with</h3>
+            <h3>Technologies & Stack</h3>
             <p className="toolkit-note">
-              A growing set of tools for building on the web.
+              Organized across frontend architecture, server runtime, and tooling.
             </p>
-            <div className="tool-list">
-              {tools.map((tool, index) => (
-                <div className="tool-row" key={tool}>
-                  <span className="tool-number">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <span>{tool}</span>
-                  <span className="tool-arrow">↗</span>
+
+            <div className="skill-categories">
+              {skillCategories.map((group) => (
+                <div className="skill-group" key={group.category}>
+                  <div className="skill-group-heading">
+                    <span className="skill-group-code">{group.code} //</span>
+                    <span className="skill-group-title">{group.category}</span>
+                  </div>
+                  <div className="skill-badges">
+                    {group.skills.map((skill) => (
+                      <span className="skill-badge" key={skill}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

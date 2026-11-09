@@ -67,8 +67,8 @@ export default function App() {
     <ReactLenis
       root
       options={{
-        lerp: 0.08,
-        smoothWheel: true,
+        lerp: reduceMotion ? 1 : 0.08,
+        smoothWheel: !reduceMotion,
         wheelMultiplier: 0.9,
         touchMultiplier: 1.2,
         smoothTouch: false,
