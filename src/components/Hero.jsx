@@ -1,74 +1,216 @@
+
+import { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
+
 export default function Hero() {
+  const reduceMotion = useReducedMotion();
+  const [showThreadIntro, setShowThreadIntro] = useState(true);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setShowThreadIntro(false);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setShowThreadIntro(false);
+    }, 4600);
+
+    return () => clearTimeout(timer);
+  }, [reduceMotion]);
+
+  const reveal = {
+    initial: reduceMotion ? false : { opacity: 0, y: 35 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+  };
+
   return (
-    <section className="hero section" id="home">
-      <div className="hero-grid container">
-        <div className="hero-copy reveal">
-          <div className="eyebrow">
-            <span className="status-dot" />
-            <span>01 // INTRODUCTION</span>
+    <section className="hero editorial-hero" id="home">
+
+      {/* SIGNATURE THREAD INTRO */}
+      {showThreadIntro && !reduceMotion && (
+        <motion.div
+          className="thread-intro"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ delay: 3.8, duration: 0.8, ease: 'easeInOut' }}
+        >
+          <span className="thread-caption">
+            PORTFOLIO / 2026
+          </span>
+
+          <div className="signature-wrap">
+            <motion.span
+              className="signature-name"
+              initial={{ clipPath: 'inset(0 100% 0 0)' }}
+              animate={{ clipPath: 'inset(0 0% 0 0)' }}
+              transition={{
+                duration: 2.8,
+                delay: 0.3,
+                ease: 'easeInOut',
+              }}
+            >
+              Niva K.
+            </motion.span>
+
+            {/* Red thread underline */}
+            <svg
+              className="signature-thread"
+              viewBox="0 0 500 45"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <motion.path
+                d="M5 25 C90 5 130 40 215 20 S350 8 420 22 S470 28 490 8"
+                fill="none"
+                stroke="#E43D32"
+                strokeWidth="2"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{
+                  duration: 2.5,
+                  delay: 0.5,
+                  ease: 'easeInOut',
+                }}
+              />
+            </svg>
           </div>
 
-          <h1>
-            Building digital<br />
-            things with <span className="accent-text">purpose.</span>
-          </h1>
+          <span className="thread-footer">
+            CREATIVE DEVELOPER
+          </span>
+        </motion.div>
+      )}
 
-          <p className="hero-description">
-            Hey, I&apos;m <strong>Niva</strong> — a developer who enjoys turning thoughtful ideas into
-            clean, useful experiences on the web.
-          </p>
+      {/* DECORATIVE RED THREAD */}
+      <svg
+        className="hero-drawing"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <motion.path
+          d="M -50 720 C 250 620, 300 850, 550 680 S 950 480, 1100 650 S 1350 750, 1500 500"
+          fill="none"
+          stroke="#e43d32"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2.5,
+            delay: 0.8,
+            ease: 'easeInOut',
+          }}
+        />
+      </svg>
 
-          <div className="hero-actions">
-            <a className="button button-primary" href="#projects">
-              Explore my work <span aria-hidden="true">↘</span>
-            </a>
-            <a className="button button-quiet" href="/resume.pdf" target="_blank" rel="noreferrer">
-              View résumé <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          <div className="hero-footnote">
-            <span className="scroll-line" /> Scroll to explore
-          </div>
-        </div>
-
-        <div className="hero-visual reveal reveal-delay-1" aria-label="Developer specification card for Niva">
-          <div className="spec-card">
-            <div className="spec-card-header">
-              <div className="spec-card-status">
-                <span className="status-dot" />
-                <span>OPEN TO WORK</span>
-              </div>
-              <span className="spec-card-id">SPEC // DEV</span>
-            </div>
-
-            <div className="spec-card-image">
-              <img src="/niva.png" alt="Niva K" />
-              <div className="spec-card-overlay" />
-            </div>
-
-            <div className="spec-card-footer">
-              <div className="spec-meta-item">
-                <span className="spec-meta-label">Role</span>
-                <span className="spec-meta-value">Full-Stack Dev</span>
-              </div>
-              <div className="spec-meta-item">
-                <span className="spec-meta-label">Location</span>
-                <span className="spec-meta-value">India</span>
-              </div>
-              <div className="spec-meta-item">
-                <span className="spec-meta-label">Status</span>
-                <span className="spec-meta-value accent">Available</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* TOP INFORMATION */}
+      <div className="hero-topline container">
+        <span>PORTFOLIO / 2026</span>
+        <span>KOZHIKODE, INDIA</span>
       </div>
 
-      <div className="hero-divider container">
-        <span>01 // INTRODUCTION</span>
-        <span>SCROLL DOWN <b>↓</b></span>
+      {/* HERO CONTENT */}
+      <div className="hero-editorial-content container">
+
+        <div className="hero-copy">
+
+          <motion.div className="hero-label" {...reveal}>
+            <span className="hero-label-dot" />
+            AVAILABLE FOR OPPORTUNITIES
+          </motion.div>
+
+          <motion.p
+            className="hero-pretitle"
+            {...reveal}
+            transition={{
+              ...reveal.transition,
+              delay: 0.15,
+            }}
+          >
+            HELLO, I'M NIVA K.
+          </motion.p>
+
+          <motion.h1
+            className="editorial-title"
+            initial={reduceMotion ? false : { opacity: 0, y: 55 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 0.25,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            Building
+            <br />
+            digital things
+            <br />
+            with <span>purpose.</span>
+          </motion.h1>
+
+          <motion.div
+            className="hero-bottom-content"
+            initial={reduceMotion ? false : { opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+          >
+            <p className="hero-description">
+              I'm a developer who enjoys turning thoughtful ideas
+              into clean, useful experiences on the web.
+              Exploring the world of full-stack development,
+              one project at a time.
+            </p>
+
+            <div className="hero-actions">
+              <a className="editorial-button" href="#projects">
+                Explore my work <span>↗</span>
+              </a>
+
+              <a
+                className="editorial-link"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                VIEW RÉSUMÉ ↗
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* PROFILE IMAGE */}
+        <motion.div
+          className="hero-portrait"
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.1, delay: 0.45 }}
+        >
+          <div className="portrait-frame">
+            <img src="/niva.png" alt="Niva K" />
+          </div>
+
+          <span className="portrait-caption">
+            DEVELOPER / CREATIVE THINKER
+          </span>
+
+          <span className="portrait-index">
+            01 — 06
+          </span>
+        </motion.div>
       </div>
+
+      {/* BOTTOM INFORMATION */}
+      <div className="hero-bottomline container">
+        <span>DESIGNING & BUILDING FOR THE WEB</span>
+
+        <span className="hero-scroll">
+          SCROLL TO EXPLORE <span>↓</span>
+        </span>
+      </div>
+
     </section>
   );
 }
